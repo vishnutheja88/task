@@ -1,0 +1,15 @@
+---
+
+ - hosts: webservers
+
+   sudo: yes
+
+   tasks:
+
+    - name: install nginx
+
+      apt: name=nginx update_cache=yes state=latest
+
+    - name: deployed
+
+      template: src=index.html dest=/usr/share/nginx/html/index.html
